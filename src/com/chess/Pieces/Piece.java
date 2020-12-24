@@ -1,6 +1,7 @@
 package com.chess.Pieces;
 
-import com.chess.Game.*;
+import com.chess.Game.Board;
+import com.chess.Game.Spot;
 
 import java.util.ArrayList;
 
@@ -32,7 +33,10 @@ public abstract class Piece {
     public boolean isFirstMove() {
         return isFirstMove;
     }
-    public abstract boolean isValidMove(int xPos, int yPos);
+
+    public abstract boolean isValidMove(int xPos, int yPos, Board board);
+
+    //public abstract boolean isValidMove(int xPos, int yPos);
     public void move(Spot from, Spot to){
         from.removePiece();
         to.insertPiece(this);
