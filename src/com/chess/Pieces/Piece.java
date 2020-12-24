@@ -2,6 +2,8 @@ package com.chess.Pieces;
 
 import com.chess.Game.*;
 
+import java.util.ArrayList;
+
 public abstract class Piece {
     private static final int black = 0;
     private static final int white = 1;
@@ -38,7 +40,7 @@ public abstract class Piece {
         y = to.getY();
     }
     // generates possible moves for a piece
-    protected abstract void possibleMoves();
+    protected abstract ArrayList<Spot> possibleMoves(Board board);
     protected boolean canMoveStraight(int toX, int toY,Board board)
     {
         if(toX==x && toY == y)
