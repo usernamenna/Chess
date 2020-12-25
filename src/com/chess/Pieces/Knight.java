@@ -13,7 +13,7 @@ public class Knight extends Piece{
     }
 
     @Override
-    public boolean isValidMove(int xPos, int yPos) {
+    public boolean isValidMove(int xPos, int yPos, Board board) {
         // Knight can move one square and two squares in any direction
         if (Math.abs(xPos - getX()) == 1 && Math.abs(yPos - getY()) == 2)
             return true;
