@@ -9,14 +9,15 @@ public class Bishop extends Piece {
 
     ArrayList<Spot> moves = new ArrayList<>();
     //ID = xLoc , yLoc
-    public Bishop(int x, int y, int color, boolean isFirstMove) {
-        super(x, y, color, isFirstMove);
+    public Bishop(int x, int y, int color) {
+        super(x, y, color);
     }
 
     @Override
     public boolean isValidMove(int xPos, int yPos, Board board) {
-        return canMoveDiagonal(xPos, yPos ,board);
+        return board.isValidPosition(xPos, yPos);
     }
+
 
 
     /* bishop moving diagonal fa el X wel Y byzedu we y2lu be nfs el 3dd
