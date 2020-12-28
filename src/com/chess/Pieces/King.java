@@ -2,24 +2,26 @@ package com.chess.Pieces;
 
 import com.chess.Game.Board;
 import com.chess.Game.Spot;
-
 import java.util.ArrayList;
-public class King extends Piece {
-    ArrayList<Spot> KingMoves = new ArrayList<>();
 
-    public King(int x, int y, int color, boolean isFirstMove) {
-        super(x, y, color, isFirstMove);
-    }
-    @Override
-    public boolean isValidMove(int xPos, int yPos, Board board)
+public class King extends Piece {
+    
+    ArrayList<Spot> KingMoves = new ArrayList<>();
+    
+    public King( int color , int xpos , int ypos )
+   {
+       super(xpos, ypos,color );  
+   }
+   @Override
+    public boolean isValidMove(int xpos, int ypos , Board board)
     {
-       if( board.isValidPosition(xPos, yPos) )
+       if( board.isValidPosition(xpos,ypos) )
        {
-           if( xPos == super.getX() || xPos == super.getX() + 1 || xPos == super.getX() - 1  )
+           if( xpos == super.getX() || xpos == super.getX() + 1 || xpos == super.getX() - 1  )
            {
-               if( yPos == super.getY() || yPos == super.getY() + 1 || yPos == super.getY() - 1 )
+               if( ypos == super.getY() || ypos == super.getY() + 1 || ypos == super.getY() - 1 )
                {
-                   if( xPos == super.getX() && yPos == super.getY() )
+                   if( xpos == super.getX() && ypos == super.getY() )
                        return false;
                    else
                        return true;
@@ -34,23 +36,22 @@ public class King extends Piece {
            return false;
     }
     @Override
-    protected ArrayList<Spot> possibleMoves(Board board)
-    {
+    protected ArrayList<Spot> possibleMoves(Board board) {
         KingMoves.clear();
         for ( int i = -1 ; i < 2 ; i++) {
             for (int j = -1; j < 2; j++) {
-                int newX = getX() + i;
-                int newY = getY() + j;
+                int newx = getX() + i;
+                int newy = getY() + j;
                 if (i == 0 && j == 0)
                     continue;
-                Spot spot = board.getSpot(newX, newY);
-                if (board.isValidPosition(newX, newY)) {
+                Spot spot = board.getSpot(newx, newy);
+                if (board.isValidPosition(newx, newy)) {
                     if (spot.getPiece() != null) {
                         if (spot.getPiece().getColor() == this.getColor())
                             continue;
-                        KingMoves.add(board.getSpot(newX, newY));
+                        KingMoves.add(board.getSpot(newx, newy));
                     } else
-                        KingMoves.add(board.getSpot(newX, newY));
+                        KingMoves.add(board.getSpot(newx, newy));
                 }
 
             }
