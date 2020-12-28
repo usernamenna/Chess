@@ -10,15 +10,15 @@ public class Rook extends Piece{
 
     ArrayList<Spot> moves = new ArrayList<>();
 
-    public Rook(boolean Fmove, int color, int xLoc, int yLoc)
+    public Rook(int color, int xLoc, int yLoc)
     {
-        super(xLoc, yLoc,color ,Fmove );
+        super(xLoc, yLoc,color );
     }
 
 
     @Override
     public boolean isValidMove(int xPos, int yPos,Board board) {
-        return canMoveStraight(xPos, yPos,board);
+        return board.isValidPosition(xPos, yPos);
     }
 
     @Override

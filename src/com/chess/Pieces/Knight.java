@@ -8,8 +8,8 @@ import java.util.ArrayList;
 public class Knight extends Piece{
 
     ArrayList<Spot> moves = new ArrayList<>();
-    public Knight(int x, int y, int color, boolean isFirstMove) {
-        super(x, y, color, isFirstMove);
+    public Knight(int x, int y, int color) {
+        super(x, y, color);
     }
 
     @Override

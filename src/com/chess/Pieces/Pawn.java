@@ -7,13 +7,19 @@ public abstract class Pawn extends Piece
 {
 
     Spot location;
-    public Pawn(int x, int y, final int color, boolean isFirstMove)
+    public Pawn(int x, int y, final int color)
     {
-        super(x, y, color, isFirstMove);
+        super(x, y, color);
     }
 
+    /**
+     * @param xPos
+     * @param yPos
+     * @param board
+     * @return
+     */
     @Override
-    public  boolean isValidMove(int xPos, int yPos, Board board)
+     public  boolean isValidMove(int xPos, int yPos, Board board)
     {
         if(board.isValidPosition(xPos, yPos)   )
         {
@@ -27,7 +33,7 @@ public abstract class Pawn extends Piece
         int one_step;
         int two_step;
 
-        if (this.getColor() == 1){
+        if (this.getColor() == black){
             one_step = 1;
             two_step = 2;
         }
@@ -40,12 +46,12 @@ public abstract class Pawn extends Piece
         if (xPosition - this.getX() == one_step )
         {
             // Straight
-            if (yPosition == this.getY() && location.isEmpty())
+            if (yPosition == this.getY()&&location == null )
             {
                 return true;
             }
             // Diagonal
-            if (Math.abs(this.getY() - yPosition) == 1 && !location.isEmpty() && location.getPiece().getColor()!=this.getColor())
+            if (Math.abs(this.getY() - yPosition) == 1&&location != null )
             {
                 return true;
             }
