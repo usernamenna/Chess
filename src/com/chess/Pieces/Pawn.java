@@ -33,7 +33,7 @@ public abstract class Pawn extends Piece
         int one_step;
         int two_step;
 
-        if (this.getColor() == black){
+        if (this.getColor() == 1){
             one_step = 1;
             two_step = 2;
         }
