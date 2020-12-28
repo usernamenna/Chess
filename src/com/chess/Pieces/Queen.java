@@ -19,7 +19,7 @@ public abstract class Queen extends Piece
     {
 
     }
-    
+
     protected ArrayList<Spot> possibleMoves(Board board)
     {
         QueenMoves.clear();
