@@ -12,12 +12,6 @@ public abstract class Pawn extends Piece
         super(x, y, color, isFirstMove);
     }
 
-    /**
-     * @param xPos
-     * @param yPos
-     * @param board
-     * @return
-     */
     @Override
     public  boolean isValidMove(int xPos, int yPos, Board board)
     {
@@ -46,12 +40,12 @@ public abstract class Pawn extends Piece
         if (xPosition - this.getX() == one_step )
         {
             // Straight
-            if (yPosition == this.getY()&&location == null )
+            if (yPosition == this.getY() && location.isEmpty())
             {
                 return true;
             }
             // Diagonal
-            if (Math.abs(this.getY() - yPosition) == 1&&location != null )
+            if (Math.abs(this.getY() - yPosition) == 1 && !location.isEmpty() && location.getPiece().getColor()!=this.getColor())
             {
                 return true;
             }

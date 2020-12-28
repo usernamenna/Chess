@@ -19,11 +19,6 @@ public class Bishop extends Piece {
     }
 
 
-    @Override
-    public boolean isValidMove(int xPos, int yPos) {
-        return false;
-    }
-
     /* bishop moving diagonal fa el X wel Y byzedu we y2lu be nfs el 3dd
             ex:
             (0,0),(1,1),....,(7,7)

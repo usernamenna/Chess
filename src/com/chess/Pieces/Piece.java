@@ -34,7 +34,7 @@ public abstract class Piece {
         return isFirstMove;
     }
 
-    public abstract boolean isValidMove(int xPos, int yPos, Board board);
+   public abstract boolean isValidMove(int xPos, int yPos, Board board);
 
     //public abstract boolean isValidMove(int xPos, int yPos);
     public void move(Spot from, Spot to){
