@@ -5,7 +5,7 @@ import com.chess.Game.Spot;
 
 import java.util.ArrayList;
 
-public abstract class Queen extends Piece
+public class Queen extends Piece
 {
     Spot location;
 
