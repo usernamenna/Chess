@@ -7,6 +7,10 @@ public class Player
     {
         color = x;
     }
+    public int getcolor ()
+    {
+        return color;
+    }
     
     
 }
