@@ -33,7 +33,7 @@ public abstract class Piece {
         return isFirstMove;
     }
 
-    public abstract boolean isValidMove(int xPos, int yPos, Board board);
+    //public abstract boolean isValidMove(int xPos, int yPos, Board board);
      // generates possible moves for a piece
     protected abstract ArrayList<Spot> possibleMoves(Board board);
 

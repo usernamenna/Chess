@@ -12,7 +12,7 @@ public class King extends Piece {
    {
        super(xpos, ypos,color );  
    }
-   @Override
+   /*@Override
     public boolean isValidMove(int xpos, int ypos , Board board)
     {
        if( board.isValidPosition(xpos,ypos) )
@@ -34,7 +34,7 @@ public class King extends Piece {
        }
        else
            return false;
-    }
+    }*/
     @Override
     protected ArrayList<Spot> possibleMoves(Board board) {
         KingMoves.clear();

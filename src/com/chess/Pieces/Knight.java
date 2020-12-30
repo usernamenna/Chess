@@ -12,7 +12,7 @@ public class Knight extends Piece{
         super(x, y, color);
     }
 
-    @Override
+    /*@Override
     public boolean isValidMove(int xPos, int yPos, Board board) {
         // Knight can move one square and two squares in any direction
         if (Math.abs(xPos - getX()) == 1 && Math.abs(yPos - getY()) == 2)
@@ -21,7 +21,7 @@ public class Knight extends Piece{
             return true;
         return false;
     }
-
+*/
     @Override
     public ArrayList<Spot> possibleMoves(Board board) {
         moves.clear();

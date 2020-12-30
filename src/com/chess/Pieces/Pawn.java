@@ -3,7 +3,9 @@ package com.chess.Pieces;
 import com.chess.Game.Board;
 import com.chess.Game.Spot;
 
-public abstract class Pawn extends Piece
+import java.util.ArrayList;
+
+public class Pawn extends Piece
 {
 
     Spot location;
@@ -12,22 +14,11 @@ public abstract class Pawn extends Piece
         super(x, y, color);
     }
 
-    /**
-     * @param xPos
-     * @param yPos
-     * @param board
-     * @return
-     */
     @Override
-     public  boolean isValidMove(int xPos, int yPos, Board board)
-    {
-        if(board.isValidPosition(xPos, yPos)   )
-        {
-            return possibleMoves( xPos,  yPos);
-        }
-        return false;
+    protected ArrayList<Spot> possibleMoves(Board board) {
+        return null;
     }
-
+    // TODO Fix this
     private boolean possibleMoves(int xPosition, int yPosition)
     {
         int one_step;

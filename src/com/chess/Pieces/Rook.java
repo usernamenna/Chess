@@ -15,12 +15,12 @@ public class Rook extends Piece{
         super(xLoc, yLoc,color );
     }
 
-
+/*
     @Override
     public boolean isValidMove(int xPos, int yPos,Board board) {
         return board.isValidPosition(xPos, yPos);
     }
-
+*/
     @Override
     protected ArrayList<Spot> possibleMoves(Board board) {
         moves.clear();

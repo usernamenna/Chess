@@ -13,19 +13,19 @@ public class Bishop extends Piece {
         super(x, y, color);
     }
 
-    @Override
-    public boolean isValidMove(int xPos, int yPos, Board board) {
-        return board.isValidPosition(xPos, yPos);
-    }
+
+    /* public boolean isValidMove(int xPos, int yPos, Board board) {
+         return board.isValidPosition(xPos, yPos);
+     }
+ */
 
 
-
-    /* bishop moving diagonal fa el X wel Y byzedu we y2lu be nfs el 3dd
-            ex:
-            (0,0),(1,1),....,(7,7)
-            (0,1)....(2,3),(3,4),(4,5),(5,6),(6,7)
-            (newX,newy)....,(newX+2,newY+2),... we hazka
-             */
+     /* bishop moving diagonal fa el X wel Y byzedu we y2lu be nfs el 3dd
+             ex:
+             (0,0),(1,1),....,(7,7)
+             (0,1)....(2,3),(3,4),(4,5),(5,6),(6,7)
+             (newX,newy)....,(newX+2,newY+2),... we hazka
+              */
     @Override
     protected ArrayList<Spot> possibleMoves(Board board) {
         moves.clear();

@@ -1,5 +1,8 @@
 package com.chess.Game;
 
+import javax.swing.*;
+import java.awt.*;
+
 public class Board {
 
     private final Spot[][] board;
@@ -7,6 +10,13 @@ public class Board {
     public Board()
     {
         board = new Spot[8][8];
+        for(int i =0;i<8;i++)
+        {
+            for(int j=0;j<8;j++)
+            {
+                board[i][j] = new Spot(i, j);
+            }
+        }
     }
     // To check that the chosen spot is in the board
     public boolean isValidPosition(int xpos , int ypos)

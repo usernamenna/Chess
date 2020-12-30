@@ -12,9 +12,11 @@ public class Spot extends JButton {
 
     public Spot(final int x, final int y)
     {
+        super();
         this.x = x;
         this.y = y;
-        setEnabled(false);
+        //setEnabled(false);
+        setVisible(true);
         if((x+y)%2==0)
         {
             setBackground(new java.awt.Color(145, 63, 45));
@@ -23,6 +25,7 @@ public class Spot extends JButton {
         {
             setBackground(new java.awt.Color(255,255,220));
         }
+        setOpaque(true);
     }
     public int getX()
     {
