@@ -25,8 +25,4 @@ public class Game extends JFrame {
         setLayout(new GridLayout(8,8, 0, 0));
         setVisible(true);
     }
-    public static void main(String[] args)
-    {
-        Game game = new Game();
-    }
 }
