@@ -2,7 +2,9 @@ package com.chess.Game;
 
 import com.chess.Pieces.Piece;
 
-public class Spot {
+import javax.swing.*;
+
+public class Spot extends JButton {
     private final int x;
     private final int y;
     private boolean empty;
@@ -12,6 +14,15 @@ public class Spot {
     {
         this.x = x;
         this.y = y;
+        setEnabled(false);
+        if((x+y)%2==0)
+        {
+            setBackground(new java.awt.Color(145, 63, 45));
+        }
+        else
+        {
+            setBackground(new java.awt.Color(255,255,220));
+        }
     }
     public int getX()
     {
@@ -29,11 +40,13 @@ public class Spot {
     {
         empty = false;
         this.piece = piece;
+        setEnabled(true);
     }
     public void removePiece()
     {
         empty = true;
         piece = null;
+        setEnabled(false);
     }
     public Piece getPiece()
     {
