@@ -8,9 +8,11 @@ public class King extends Piece {
     
     ArrayList<Spot> KingMoves = new ArrayList<>();
     
-    public King( int color , int xpos , int ypos )
+    public King( int xpos , int ypos , int color)
    {
-       super(xpos, ypos,color );  
+       super(xpos, ypos,color ); 
+        super.BlackPath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\king.png";
+        super.WhitePath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\kingw.png";
    }
    /*@Override
     public boolean isValidMove(int xpos, int ypos , Board board)
