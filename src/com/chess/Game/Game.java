@@ -13,6 +13,7 @@ public class Game extends JFrame {
         setSize(600, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
+        setLayout(new GridLayout(8,8, 0, 0));
         for(int i = 0 ; i < 8 ; i++)
         {
             for(int j = 0 ; j < 8 ; j++)
@@ -25,11 +26,12 @@ public class Game extends JFrame {
         }
         Setup();
         setLayout(new GridLayout(8,8, 0, 0));
+        doLayout();
         setVisible(true);
         validate(); 
     }
     
-    // setting up pices
+    // setting up pieces
     public void Setup ()
     {
         

@@ -4,6 +4,7 @@ import com.chess.Pieces.Piece;
 import java.awt.*;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Spot extends JButton {
     private final int x;
@@ -74,4 +75,5 @@ public class Spot extends JButton {
     {
         return piece;
     }
+
 }
