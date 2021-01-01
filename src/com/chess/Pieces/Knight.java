@@ -10,6 +10,8 @@ public class Knight extends Piece{
     ArrayList<Spot> moves = new ArrayList<>();
     public Knight(int x, int y, int color) {
         super(x, y, color);
+        super.BlackPath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\knight.png";
+        super.WhitePath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\knightw.png";
     }
 
     /*@Override
