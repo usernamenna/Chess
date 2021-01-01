@@ -10,6 +10,8 @@ public class Queen extends Piece
     public Queen ( int x, int y, final int color)
     {
         super(x, y, color);
+        super.BlackPath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\queen.png";
+        super.WhitePath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\queenw.png";
     }
     protected ArrayList<Spot> possibleMoves(Board board)
     {
