@@ -11,15 +11,9 @@ public class Bishop extends Piece {
     //ID = xLoc , yLoc
     public Bishop(int x, int y, int color) {
         super(x, y, color);
+        super.BlackPath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\bishop.png";
+        super.WhitePath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\bishopw.png";
     }
-
-
-    /* public boolean isValidMove(int xPos, int yPos, Board board) {
-         return board.isValidPosition(xPos, yPos);
-     }
- */
-
-
      /* bishop moving diagonal fa el X wel Y byzedu we y2lu be nfs el 3dd
              ex:
              (0,0),(1,1),....,(7,7)
