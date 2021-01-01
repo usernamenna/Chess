@@ -12,6 +12,8 @@ public class Pawn extends Piece
     public Pawn(int x, int y, final int color)
     {
         super(x, y, color);
+        super.BlackPath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\pawn.png";
+        super.WhitePath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\pawnw.png";
     }
 
     @Override
