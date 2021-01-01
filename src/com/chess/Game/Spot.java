@@ -1,6 +1,7 @@
 package com.chess.Game;
 
 import com.chess.Pieces.Piece;
+import java.awt.*;
 
 import javax.swing.*;
 
@@ -15,17 +16,19 @@ public class Spot extends JButton {
         super();
         this.x = x;
         this.y = y;
-        //setEnabled(false);
-        setVisible(true);
+        
         if((x+y)%2==0)
         {
-            setBackground(new java.awt.Color(145, 63, 45));
+            setBackground(new java.awt.Color(0,40,80));
         }
         else
         {
-            setBackground(new java.awt.Color(255,255,220));
+            setBackground(new java.awt.Color(153,204,255));
         }
-        setOpaque(true);
+      // setOpaque(true);
+       setVisible(true);
+       //repaint();
+      // revalidate();
     }
     public int getX()
     {
@@ -41,12 +44,28 @@ public class Spot extends JButton {
     }
     public void insertPiece(Piece piece)
     {
+        String path = "null"; 
+        if (piece.getColor() == 0)
+        {
+        path = piece.getBlackPath();
+        }
+        else if (piece.getColor() ==1)
+        {
+        path = piece.getWhitePath();
+        }
+        ImageIcon icon = new ImageIcon(path);
+        Image bf = icon.getImage();
+        Image af = bf.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
+        icon = new ImageIcon(af);
+        this.setIcon(icon);
+        
         empty = false;
         this.piece = piece;
         setEnabled(true);
     }
     public void removePiece()
-    {
+    {    
+        this.setIcon(null);
         empty = true;
         piece = null;
         setEnabled(false);
