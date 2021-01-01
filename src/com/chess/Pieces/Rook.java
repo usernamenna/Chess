@@ -10,9 +10,11 @@ public class Rook extends Piece{
 
     ArrayList<Spot> moves = new ArrayList<>();
 
-    public Rook(int color, int xLoc, int yLoc)
+    public Rook( int xLoc, int yLoc , int color)
     {
         super(xLoc, yLoc,color );
+        super.BlackPath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\rook.png";
+        super.WhitePath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\rookw.png";
     }
 
 /*
