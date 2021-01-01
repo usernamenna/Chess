@@ -12,6 +12,8 @@ public abstract class Piece {
     private int x;
     private int y;// Position
     private boolean isFirstMove = true;
+    protected String BlackPath;
+    protected String WhitePath;
 
     public Piece(int x, int y, final int color){
         this.x = x;
@@ -32,8 +34,13 @@ public abstract class Piece {
     public boolean isFirstMove() {
         return isFirstMove;
     }
-
-    //public abstract boolean isValidMove(int xPos, int yPos, Board board);
+    public String getWhitePath(){
+        return WhitePath;
+    }
+    public String getBlackPath(){
+        return BlackPath;
+    }
+  
      // generates possible moves for a piece
     protected abstract ArrayList<Spot> possibleMoves(Board board);
 
