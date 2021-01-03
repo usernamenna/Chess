@@ -10,8 +10,8 @@ public class Knight extends Piece{
     ArrayList<Spot> moves = new ArrayList<>();
     public Knight(int x, int y, int color) {
         super(x, y, color);
-        super.BlackPath ="src/com/chess/Pieces/png/knight.png";
-        super.WhitePath ="src/com/chess/Pieces/png/knightw.png";
+        super.BlackPath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\knight.png";
+        super.WhitePath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\knightw.png";
     }
 
     /*@Override
@@ -36,7 +36,7 @@ public class Knight extends Piece{
             int newY = getY()+Y[i];
             Spot spot = board.getSpot(newX, newY);
             // check if spot is valid and empty OR contains a piece of the opposite color
-            if(board.isValidPosition(newX, newY) || (spot.getPiece()!= null && spot.getPiece().getColor()!= this.getColor()))
+            if(board.isValidPosition(newX, newY) && (spot.isEmpty() || (!spot.isEmpty() && spot.getPiece().getColor()!= this.getColor()) )  )
             {
                 moves.add(board.getSpot(newX, newY));
             }
