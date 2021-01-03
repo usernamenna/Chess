@@ -11,8 +11,8 @@ public class King extends Piece {
     public King( int xpos , int ypos , int color)
    {
        super(xpos, ypos,color ); 
-        super.BlackPath ="src/com/chess/Pieces/png/king.png";
-        super.WhitePath ="src/com/chess/Pieces/png/kingw.png";
+        super.BlackPath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\king.png";
+        super.WhitePath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\kingw.png";
    }
    /*@Override
     public boolean isValidMove(int xpos, int ypos , Board board)
@@ -38,7 +38,7 @@ public class King extends Piece {
            return false;
     }*/
     @Override
-    protected ArrayList<Spot> possibleMoves(Board board) {
+    public ArrayList<Spot> possibleMoves(Board board) {
         KingMoves.clear();
         for ( int i = -1 ; i < 2 ; i++) {
             for (int j = -1; j < 2; j++) {
