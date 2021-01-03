@@ -13,8 +13,8 @@ public class Rook extends Piece{
     public Rook( int xLoc, int yLoc , int color)
     {
         super(xLoc, yLoc,color );
-        super.BlackPath ="src/com/chess/Pieces/png/rook.png";
-        super.WhitePath ="src/com/chess/Pieces/png/rookw.png";
+        super.BlackPath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\rook.png";
+        super.WhitePath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\rookw.png";
     }
 
 /*
@@ -24,7 +24,7 @@ public class Rook extends Piece{
     }
 */
     @Override
-    protected ArrayList<Spot> possibleMoves(Board board) {
+    public ArrayList<Spot> possibleMoves(Board board) {
         moves.clear();
 
         int[] negX = {-7,-6,-5,-4,-3,-2,-1};
