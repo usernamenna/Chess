@@ -42,7 +42,7 @@ public abstract class Piece {
     }
   
      // generates possible moves for a piece
-    protected abstract ArrayList<Spot> possibleMoves(Board board);
+    public abstract ArrayList<Spot> possibleMoves(Board board);
 
     //public abstract boolean isValidMove(int xPos, int yPos);
     public void move(Spot from, Spot to){
