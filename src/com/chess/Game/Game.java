@@ -137,26 +137,18 @@ public class Game extends JFrame implements ActionListener {
            
            if (source instanceof Spot) {
                 Spot button = (Spot)source;
+
+                button.getPiece().possibleMoves(board).get(0).setBackground(Color.yellow);
               //  button.setBackground(Color.yellow);
-           if(!button.isEmpty())
-           {
-               ArrayList<Spot>pet = button.getPiece().possibleMoves(board);
+
+               /*ArrayList<Spot>pet = button.getPiece().possibleMoves(board);
                
-               for(Spot i : pet)
+               for(int i =0; i)
                {
                    i.setBackground(Color.yellow);
-               }
-           }
-           }  
-//                button.getPiece();
+               }*/
 
-             // System.out.println(pet.get(0));
-           
-//
-//        for (int i = 0 ; i < pet.lastIndexOf(pet); i++)
-//           {
-//                pet.get(i).setBackground(Color.yellow);
-//           }
+           }
            
     }
 }

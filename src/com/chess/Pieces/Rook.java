@@ -13,8 +13,8 @@ public class Rook extends Piece{
     public Rook( int xLoc, int yLoc , int color)
     {
         super(xLoc, yLoc,color );
-        super.BlackPath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\rook.png";
-        super.WhitePath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\rookw.png";
+        super.BlackPath ="src/com/chess/Pieces/png/rook.png";
+        super.WhitePath ="src/com/chess/Pieces/png/rookw.png";
     }
 
 /*

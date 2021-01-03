@@ -7,19 +7,25 @@ import java.util.ArrayList;
 
 public class Pawn extends Piece
 {
-
+    ArrayList<Spot> moves = new ArrayList<>();
     Spot location;
     public Pawn(int x, int y, final int color)
     {
         super(x, y, color);
-        super.BlackPath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\pawn.png";
-        super.WhitePath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\pawnw.png";
+        super.BlackPath ="src/com/chess/Pieces/png/pawn.png";
+        super.WhitePath ="src/com/chess/Pieces/png/pawnw.png";
     }
 
  public ArrayList<Spot> possibleMoves(Board board)
  {
-    
-     return null;
+     moves.clear();
+    Spot f = new Spot( 2, 4) ;
+    Spot  s= new Spot(3, 5) ;
+    Spot t = new Spot(4, 6) ;
+     moves.add(f);
+     moves.add(s);
+     moves.add(t);
+     return moves;
  }
     // TODO Fix this
 //    private boolean possibleMoves(Board board)

@@ -13,7 +13,7 @@ public class Queen extends Piece
         super.BlackPath ="src/com/chess/Pieces/png/queen.png";
         super.WhitePath ="src/com/chess/Pieces/png/queenw.png";
     }
-    protected ArrayList<Spot> possibleMoves(Board board)
+    public ArrayList<Spot> possibleMoves(Board board)
     {
         QueenMoves.clear();
         int[] negX = {-7,-6,-5,-4,-3,-2,-1};
