@@ -10,7 +10,7 @@ public class Spot extends JButton {
     private final int x;
     private final int y;
     private boolean empty;
-    private Piece piece;
+    private Piece piece = null;
 
     public Spot(final int x, final int y)
     {
@@ -20,11 +20,11 @@ public class Spot extends JButton {
         
         if((x+y)%2==0)
         {
-            setBackground(new java.awt.Color(203, 228, 249));
+            setBackground(new java.awt.Color(0,40,80));
         }
         else
         {
-            setBackground(new java.awt.Color(249, 235, 223));
+            setBackground(new java.awt.Color(153,204,255));
         }
       // setOpaque(true);
        setVisible(true);
