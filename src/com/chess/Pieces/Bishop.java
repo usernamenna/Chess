@@ -11,8 +11,8 @@ public class Bishop extends Piece {
     //ID = xLoc , yLoc
     public Bishop(int x, int y, int color) {
         super(x, y, color);
-        super.BlackPath ="src/com/chess/Pieces/png/bishop.png";
-        super.WhitePath ="src/com/chess/Pieces/png/bishopw.png";
+        super.BlackPath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\bishop.png";
+        super.WhitePath ="C:\\Users\\Norhan\\Desktop\\112072-chess\\png\\bishopw.png";
     }
      /* bishop moving diagonal fa el X wel Y byzedu we y2lu be nfs el 3dd
              ex:
@@ -21,7 +21,7 @@ public class Bishop extends Piece {
              (newX,newy)....,(newX+2,newY+2),... we hazka
               */
     @Override
-    protected ArrayList<Spot> possibleMoves(Board board) {
+    public ArrayList<Spot> possibleMoves(Board board) {
         moves.clear();
 
         int[] X = {1, 2, 3, 4, 5, 6, 7};
