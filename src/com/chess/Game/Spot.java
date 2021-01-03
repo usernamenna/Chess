@@ -20,11 +20,11 @@ public class Spot extends JButton {
         
         if((x+y)%2==0)
         {
-            setBackground(new java.awt.Color(0,40,80));
+            setBackground(new java.awt.Color(203, 228, 249));
         }
         else
         {
-            setBackground(new java.awt.Color(153,204,255));
+            setBackground(new java.awt.Color(249, 235, 223));
         }
       // setOpaque(true);
        setVisible(true);
