@@ -9,8 +9,15 @@ import java.awt.*;
 public class Spot extends JButton {
     private final int x;
     private final int y;
-    private boolean empty;
+    private boolean empty = true;
     private Piece piece = null;
+    
+    public Spot ()
+    {
+        super();
+       this.x = 0;
+       this.y = 0; 
+    }
 
     public Spot(final int x, final int y)
     {
