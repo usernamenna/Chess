@@ -3,9 +3,9 @@ package com.chess.Game;
 import javax.swing.*;
 import java.awt.*;
 import com.chess.Pieces.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 
 public class Game extends JFrame implements ActionListener {
@@ -29,9 +29,9 @@ public class Game extends JFrame implements ActionListener {
         }
         Setup();
         setLayout(new GridLayout(8,8, 0, 0));
-        doLayout();
+        pack();
+
         setVisible(true);
-        validate(); 
     }
     
     // setting up pieces
@@ -47,11 +47,13 @@ public class Game extends JFrame implements ActionListener {
                     if ( j == 0 || j ==7 )
                     {
                         Piece rook = new Rook(i,j,0);
+                        rook = new Rook(i, j, 0);
                         board.getSpot(i, j).insertPiece(rook);
                     }
                     else if ( j == 1 || j ==6 )
                     {
                         Piece knight = new Knight(i,j,0);
+                        knight = new Knight(i,j,0);
                         board.getSpot(i, j).insertPiece(knight);
                     }
                     else if ( j == 2 || j == 5)
@@ -151,4 +153,5 @@ public class Game extends JFrame implements ActionListener {
            }
            
     }
+
 }
