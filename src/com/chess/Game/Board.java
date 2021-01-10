@@ -21,7 +21,7 @@ public class Board {
     // To check that the chosen spot is in the board
     public boolean isValidPosition(int xpos , int ypos)
     {
-        if(xpos >= 0 && xpos <= 7 && ypos >= 0 && ypos <= 7)
+        if( (xpos >= 0 && xpos <= 7) && (ypos >= 0 && ypos <= 7))
             return true;
         else
             return false;

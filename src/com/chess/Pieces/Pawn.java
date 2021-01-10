@@ -9,7 +9,7 @@ public class Pawn extends Piece
 {
     ArrayList<Spot> moves = new ArrayList<>();
     Spot location;
-    public Pawn(int x, int y, final int color)
+    public Pawn(int x, int y,  int color)
     {
         super(x, y, color);
         super.BlackPath ="src/com/chess/Pieces/png/pawn.png";
