@@ -14,6 +14,7 @@ public abstract class Piece {
     private boolean isFirstMove = true;
     protected String BlackPath;
     protected String WhitePath;
+   
 
     public Piece(int x, int y, final int color){
         this.x = x;

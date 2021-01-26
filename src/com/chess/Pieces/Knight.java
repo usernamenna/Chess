@@ -41,10 +41,11 @@ public class Knight extends Piece{
            if (board.isValidPosition(newX, newY) )
            {
                Spot spot = board.getSpot(newX, newY);
+               
             // check if spot is valid and empty OR contains a piece of the opposite color
             if( spot.isEmpty() || (!spot.isEmpty() && spot.getPiece().getColor()!= this.getColor())   )
             {   
-                //did = true;
+               
                 moves.add(spot); 
             }
            }

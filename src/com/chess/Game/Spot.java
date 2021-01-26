@@ -6,11 +6,16 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.*;
 
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
+
+
 public class Spot extends JButton {
     private final int x;
     private final int y;
     private boolean empty = true;
     private Piece piece = null;
+    private Border defaultborder;
     
     public Spot ()
     {
@@ -27,11 +32,11 @@ public class Spot extends JButton {
         
         if((x+y)%2==0)
         {
-            setBackground(new java.awt.Color(0,40,80));
+            setBackground(new java.awt.Color(203, 228, 249));
         }
         else
         {
-            setBackground(new java.awt.Color(153,204,255));
+            setBackground(new java.awt.Color(249, 235, 223));
         }
       // setOpaque(true);
        setVisible(true);
@@ -50,6 +55,15 @@ public class Spot extends JButton {
     {
         return empty;
     }
+    public void setdefaultborder( Border border)
+    {
+        defaultborder = border;
+    }
+    public Border getdefaultborder()
+    {
+        return defaultborder;
+    }
+    
     public void insertPiece(Piece piece)
     {
         String path = "null"; 
@@ -69,14 +83,12 @@ public class Spot extends JButton {
         
         empty = false;
         this.piece = piece;
-        setEnabled(true);
     }
     public void removePiece()
     {    
         this.setIcon(null);
         empty = true;
         piece = null;
-        setEnabled(false);
     }
     public Piece getPiece()
     {
