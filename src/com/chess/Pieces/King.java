@@ -8,35 +8,21 @@ public class King extends Piece {
     
     ArrayList<Spot> KingMoves = new ArrayList<>();
     
-    public King( int xpos , int ypos , int color)
+     public King(int color)
    {
-       super(xpos, ypos,color ); 
+       super(color ); 
         super.BlackPath ="src/com/chess/Pieces/png/king.png";
         super.WhitePath ="src/com/chess/Pieces/png/kingw.png";
+        super.PieceName = "King";
    }
-   /*@Override
-    public boolean isValidMove(int xpos, int ypos , Board board)
-    {
-       if( board.isValidPosition(xpos,ypos) )
-       {
-           if( xpos == super.getX() || xpos == super.getX() + 1 || xpos == super.getX() - 1  )
-           {
-               if( ypos == super.getY() || ypos == super.getY() + 1 || ypos == super.getY() - 1 )
-               {
-                   if( xpos == super.getX() && ypos == super.getY() )
-                       return false;
-                   else
-                       return true;
-               }
-               else
-                   return false;
-           }
-           else 
-               return false;
-       }
-       else
-           return false;
-    }*/
+    public King( int xpos , int ypos , int color)
+   {
+        super(xpos, ypos,color ); 
+        super.BlackPath ="src/com/chess/Pieces/png/king.png";
+        super.WhitePath ="src/com/chess/Pieces/png/kingw.png";
+        super.PieceName= "king";
+   }
+  
     @Override
     public ArrayList<Spot> possibleMoves(Board board) {
         KingMoves.clear();
@@ -46,8 +32,9 @@ public class King extends Piece {
                 int newy = getY() + j;
                 if (i == 0 && j == 0)
                     continue;
-                Spot spot = board.getSpot(newx, newy);
+          
                 if (board.isValidPosition(newx, newy)) {
+                          Spot spot = board.getSpot(newx, newy);
                     if (spot.getPiece() != null) {
                         if (spot.getPiece().getColor() == this.getColor())
                             continue;

@@ -3,7 +3,7 @@ package com.chess.Game;
 import javax.swing.*;
 import java.awt.*;
 
-public class Board {
+public class Board  {
 
     private final Spot[][] board;
 

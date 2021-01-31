@@ -14,14 +14,24 @@ public abstract class Piece {
     private boolean isFirstMove = true;
     protected String BlackPath;
     protected String WhitePath;
+    protected String PieceName;
    
+   // this constructor is used to create only pieces WITHOUT having to add its position on board
+   public Piece(final int color){
+        this.color = color;
+    } 
 
     public Piece(int x, int y, final int color){
         this.x = x;
         this.y = y;
         this.color = color;
     }
-
+    public void setX(int x){
+        this.x =x;
+    }
+    public void setY(int y){
+        this.y =y;
+    }
     public int getX() {
         return x;
     }
@@ -40,6 +50,9 @@ public abstract class Piece {
     }
     public String getBlackPath(){
         return BlackPath;
+    }
+    public String getPieceName(){
+        return PieceName;
     }
   
      // generates possible moves for a piece

@@ -11,25 +11,27 @@ import javax.swing.border.LineBorder;
 
 
 public class Game extends JFrame implements ActionListener {
-    int prex, prey;
+    int prex =-1, prey=-1;
     Piece piece;
     ArrayList <Spot> preposs;
+    
     
     Board board = new Board();
     Player WhitePlayer = new Player(1);
     Player BlackPlayer = new Player(0);
     int CurrentPlayerColor =1;
+   
     
     public Game()
     {   
         super();
         setTitle("Chess");
         setSize(600, 600);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(false);
-        setLayout(new GridLayout(8,8, 0, 0));
-        doLayout();
         setVisible(true);
+        setLocation(380, 50);
+        setLayout(new GridLayout(8,8, 0, 0));
       // validate();   
     }
  
@@ -142,7 +144,7 @@ public class Game extends JFrame implements ActionListener {
         }
         setLayout(new GridLayout(8,8, 0, 0));
         doLayout();
-        
+       
          //  adding action listener
           for(int i = 0 ; i < 8 ; i++)
         {
@@ -175,30 +177,54 @@ public class Game extends JFrame implements ActionListener {
             Spot button = (Spot)source;
             Border border = new LineBorder(Color.black,4);
             
-            
-            if (  button.getdefaultborder() == button.getBorder()  && button.isEmpty() == false)
+           if ((button.getdefaultborder() == button.getBorder()  && button.isEmpty() == false)&&(button.getPiece().getPieceName() == "Pawn") && (button.getPiece().getX()== 0 || button.getPiece().getX()== 7 ) )
             {
+               PawnPromotion window = new PawnPromotion(board,button.getX(), button.getY(),button.getPiece().getColor());
+               
+               
+            }
+           // to check the border of the clicked button if it is normal Spot or a possible move Spot
+           else if (button.getdefaultborder() == button.getBorder()  && button.isEmpty() == false)
+            {
+                // to check if the current player color is the same color of the selected piece
                 if ( CurrentPlayerColor == button.getPiece().getColor() )
                 {
+                    //to check if there were a clicked spot before AND it has its possible moves spots Bordered
+                    if ( prex != -1 && prey !=-1)
+                    {
+                     preposs.forEach((i) -> {i.setBorder(button.getdefaultborder());}); 
+                    }
+            // getting possible moves of the spot 
             ArrayList<Spot> pet = button.getPiece().possibleMoves(board);
             pet.forEach((Spot i) -> { i.setBorder(border);});
             
             prex = button.getX();
             prey = button.getY();
-            preposs = pet;
-            SwitchPlayer(CurrentPlayerColor);
+            preposs = pet; 
+  
                 }
             }
-         
-            else if (   button.getdefaultborder() != button.getBorder() )
+          else if (  button.getdefaultborder() == button.getBorder() && button.isEmpty() == true)
+          {
+              if ( prex != -1 && prey !=-1)
+                    {
+                     preposs.forEach((i) -> {i.setBorder(button.getdefaultborder());}); 
+                    }
+          }
+            else if ( button.getdefaultborder() != button.getBorder() )
             {
-              board.getSpot(prex, prey).getPiece().move(board.getSpot(prex, prey), button);
-              preposs.forEach((i) -> {i.setBorder(button.getdefaultborder());});
-
+            board.getSpot(prex, prey).getPiece().move(board.getSpot(prex, prey), button);
+            preposs.forEach((i) -> {i.setBorder(button.getdefaultborder());});
+            prex =-1;
+            prey =-1;
+            SwitchPlayer(CurrentPlayerColor);
             }
+         
             
            }
            
     }
+
+   
     
 }

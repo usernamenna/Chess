@@ -9,22 +9,21 @@ public class Knight extends Piece{
     
 
     ArrayList<Spot> moves = new ArrayList<>();
+    
+    public Knight(int color) {
+        super(color);
+        super.BlackPath ="src/com/chess/Pieces/png/knight.png";
+        super.WhitePath ="src/com/chess/Pieces/png/knightw.png";
+        super.PieceName = "Knight";
+    }
+    
     public Knight(int x, int y, int color) {
         super(x, y, color);
         super.BlackPath ="src/com/chess/Pieces/png/knight.png";
         super.WhitePath ="src/com/chess/Pieces/png/knightw.png";
+        super.PieceName = "Knight";
     }
 
-    /*@Override
-    public boolean isValidMove(int xPos, int yPos, Board board) {
-        // Knight can move one square and two squares in any direction
-        if (Math.abs(xPos - getX()) == 1 && Math.abs(yPos - getY()) == 2)
-            return true;
-        else if (Math.abs(xPos - getX()) == 2 && Math.abs(yPos - getY()) == 1)
-            return true;
-        return false;
-    }
-*/
     @Override
     public ArrayList<Spot> possibleMoves(Board board) {
         moves.clear();

@@ -77,7 +77,7 @@ public class Spot extends JButton {
         }
         ImageIcon icon = new ImageIcon(path);
         Image bf = icon.getImage();
-        Image af = bf.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
+        Image af = bf.getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH);
         icon = new ImageIcon(af);
         this.setIcon(icon);
         
@@ -89,6 +89,7 @@ public class Spot extends JButton {
         this.setIcon(null);
         empty = true;
         piece = null;
+       
     }
     public Piece getPiece()
     {
