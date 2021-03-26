@@ -26,7 +26,7 @@ public class Game extends JFrame implements ActionListener {
     {   
         super();
         setTitle("Chess");
-        setSize(600, 600);
+        setSize(650, 650);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
