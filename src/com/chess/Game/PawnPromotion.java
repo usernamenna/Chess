@@ -25,7 +25,7 @@ public class PawnPromotion extends JFrame implements ActionListener {
         board2 = board;
         selectedX = X;
         selectedY = Y;
-        setTitle("Pawn Promotion !");
+        setTitle("Pawn Promotion");
         setSize(600, 200);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -42,7 +42,7 @@ public class PawnPromotion extends JFrame implements ActionListener {
         label.setBounds(175, 10, 300, 40);
         
         // setting up buttons
-        for (int i=0; i < 6; i ++)
+        for (int i=0; i < 6; i++)
         {
             button[i] = new JButton();
             button[i].setBackground(new java.awt.Color(203, 228, 249));
@@ -56,8 +56,7 @@ public class PawnPromotion extends JFrame implements ActionListener {
         button[4].setBounds(400,65, 80, 80);
         button[5].setBounds(495,65, 80, 80);
         
-        
-        
+
         // adjusting the panel color , layout and adding it to frame (153, 51, 255)
         p.setBackground(new java.awt.Color(249, 235, 223));
         add(p); p.setLayout(null);
@@ -85,11 +84,11 @@ public class PawnPromotion extends JFrame implements ActionListener {
         for ( int i=0 ; i < 6; i++){
         if (color == 0)
         {
-        path = piece[i].getBlackPath();
+            path = piece[i].getBlackPath();
         }
         else if (color ==1)
         {
-        path = piece[i].getWhitePath();
+            path = piece[i].getWhitePath();
         }
         ImageIcon icon = new ImageIcon(path);
         Image bf = icon.getImage();

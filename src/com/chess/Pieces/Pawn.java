@@ -2,7 +2,6 @@ package com.chess.Pieces;
 
 import com.chess.Game.Board;
 import com.chess.Game.Spot;
-
 import java.util.ArrayList;
 
 public class Pawn extends Piece
@@ -43,17 +42,17 @@ public class Pawn extends Piece
 
 
 
-        // pawn can move one  space Straight if sopt doesnot contain any pieces
+        // pawn can move one  space Straight if spot does not contain any pieces
 
         //x constant   Y up
         if (getColor()==0)
         {
             // to check for the first move
             if (isFirstMove()==true)
-                t =2;
-
+                t = 2;
             else
-                t=1;
+                t = 1;
+
             for(int i = 0 ; i < t ; i++)
             {
                 int newX = getX()+ X[i];
@@ -62,7 +61,7 @@ public class Pawn extends Piece
                 if (board.isValidPosition(newX, newY) )
                 {
                     Spot spot = board.getSpot(newX, newY);
-                    // check if spot is valid and empty OR contains a piece of the opposite color
+                    // check if spot is valid and empty
                     if(board.isValidPosition(newX, newY) && spot.getPiece()== null )
                     {
                         moves.add(board.getSpot(newX, newY));
@@ -103,7 +102,7 @@ public class Pawn extends Piece
             }
 
             //Left up
-            for(int i = 0 ; i <1 ; i++)
+            for(int i = 0 ; i < 1 ; i++)
             {
                 int newX = getX()+X[i];
                 int newY = getY()-Y[i];
@@ -134,7 +133,7 @@ public class Pawn extends Piece
 
             for(int i = 0 ; i < t ; i++)
             {
-                int newX = getX()- X[i];
+                int newX = getX() - X[i];
                 int newY = getY();
 
                 if (board.isValidPosition(newX, newY) )

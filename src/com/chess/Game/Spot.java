@@ -2,12 +2,8 @@ package com.chess.Game;
 
 import com.chess.Pieces.Piece;
 import java.awt.*;
-
 import javax.swing.*;
-import java.awt.*;
-
 import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
 
 
 public class Spot extends JButton {
@@ -20,8 +16,8 @@ public class Spot extends JButton {
     public Spot ()
     {
         super();
-       this.x = 0;
-       this.y = 0; 
+        this.x = 0;
+        this.y = 0;
     }
 
     public Spot(final int x, final int y)
