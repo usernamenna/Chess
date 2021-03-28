@@ -26,10 +26,7 @@ public class Board  {
         else
             return false;
     }
-    public void capturePiece(int x , int y)
-    {
-        board[x][y].removePiece();
-    }
+    
     public Spot getSpot(int x , int y)
     {
         return board[x][y];

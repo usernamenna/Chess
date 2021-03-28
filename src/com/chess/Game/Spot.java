@@ -1,9 +1,13 @@
 package com.chess.Game;
 
 import com.chess.Pieces.Piece;
-import java.awt.*;
+
+
 import javax.swing.*;
+import java.awt.*;
+
 import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
 
 
 public class Spot extends JButton {
@@ -16,8 +20,8 @@ public class Spot extends JButton {
     public Spot ()
     {
         super();
-        this.x = 0;
-        this.y = 0;
+       this.x = 0;
+       this.y = 0; 
     }
 
     public Spot(final int x, final int y)
@@ -34,10 +38,9 @@ public class Spot extends JButton {
         {
             setBackground(new java.awt.Color(249, 235, 223));
         }
-      // setOpaque(true);
+   
        setVisible(true);
-       //repaint();
-      // revalidate();
+      
     }
     public int getX()
     {
@@ -51,6 +54,8 @@ public class Spot extends JButton {
     {
         return empty;
     }
+    
+    // those functions are related to GUI handling
     public void setdefaultborder( Border border)
     {
         defaultborder = border;
@@ -60,6 +65,7 @@ public class Spot extends JButton {
         return defaultborder;
     }
     
+    // piece insertion in GUI
     public void insertPiece(Piece piece)
     {
         String path = "null"; 
@@ -75,13 +81,17 @@ public class Spot extends JButton {
         Image bf = icon.getImage();
         Image af = bf.getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH);
         icon = new ImageIcon(af);
-        this.setIcon(icon);
         
+        this.setIcon(icon);
         empty = false;
         this.piece = piece;
+        piece.setX(this.x);
+        piece.setY(this.y);
     }
     public void removePiece()
     {    
+        piece.setX(-1);
+        piece.setY(-1);
         this.setIcon(null);
         empty = true;
         piece = null;

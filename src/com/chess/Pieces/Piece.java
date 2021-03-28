@@ -9,8 +9,8 @@ public abstract class Piece {
     protected static final int black = 0;
     protected static final int white = 1;
     private final int color; // 0 for black, 1 for white
-    private int x;
-    private int y;// Position
+    private int x = -1;
+    private int y = -1 ;// Position
     private boolean isFirstMove = true;
     protected String BlackPath;
     protected String WhitePath;
@@ -51,6 +51,8 @@ public abstract class Piece {
     public String getBlackPath(){
         return BlackPath;
     }
+    
+    // is related to pwan promotion window
     public String getPieceName(){
         return PieceName;
     }
