@@ -11,7 +11,7 @@ import static javax.swing.text.html.CSS.Attribute.FONT_FAMILY;
 public class KingCheck extends JFrame{
     
     JPanel p = new JPanel();
-    JLabel label = new JLabel("King Check !");
+    JLabel label = new JLabel("King in Check");
     
     
     

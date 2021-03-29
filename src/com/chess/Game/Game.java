@@ -18,8 +18,8 @@ public class Game extends JFrame implements ActionListener {
     Board board = new Board();
     Player WhitePlayer = new Player(1);
     Player BlackPlayer = new Player(0);
-
     int CurrentPlayerColor =1;
+
 
     Piece piece;
     int x, y;
@@ -360,6 +360,21 @@ public class Game extends JFrame implements ActionListener {
                 preposs.forEach((i) -> {i.setBorder(button.getdefaultborder());});
                 prex =-1;
                 prey =-1;
+
+                if (CurrentPlayerColor == 1)
+                {
+                    if (IsKingCheck(0))
+                    {
+                        KingCheck window = new KingCheck();
+                    }
+                }
+                else if (CurrentPlayerColor == 0)
+                {
+                    if (IsKingCheck(1))
+                    {
+                        KingCheck window = new KingCheck();
+                    }
+                }
                 SwitchPlayer(CurrentPlayerColor);
             }
 
