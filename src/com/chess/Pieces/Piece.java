@@ -6,7 +6,6 @@ import com.chess.Game.Spot;
 import java.util.ArrayList;
 
 public abstract class Piece {
-
     protected static final int black = 0;
     protected static final int white = 1;
     private final int color; // 0 for black, 1 for white
@@ -53,7 +52,7 @@ public abstract class Piece {
         return BlackPath;
     }
     
-    // is related to pawn promotion window
+    // is related to pwan promotion window
     public String getPieceName(){
         return PieceName;
     }
@@ -61,6 +60,7 @@ public abstract class Piece {
      // generates possible moves for a piece
     public abstract ArrayList<Spot> possibleMoves(Board board);
 
+    //public abstract boolean isValidMove(int xPos, int yPos);
     public void move(Spot from, Spot to){
         from.removePiece();
         to.insertPiece(this);

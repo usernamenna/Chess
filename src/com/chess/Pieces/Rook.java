@@ -149,7 +149,7 @@ public class Rook extends Piece{
                 moves.add(board.getSpot(newX, newY));
             }
         }}
-
+ 
         return moves;
     }
  
