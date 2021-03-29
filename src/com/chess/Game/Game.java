@@ -10,16 +10,16 @@ import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
 
-
 public class Game extends JFrame implements ActionListener {
     int prex =-1, prey=-1;
     ArrayList <Spot> preposs;
 
+
     Board board = new Board();
     Player WhitePlayer = new Player(1);
     Player BlackPlayer = new Player(0);
-    int CurrentPlayerColor =1;
 
+    int CurrentPlayerColor =1;
 
     Piece piece;
     int x, y;
@@ -35,21 +35,20 @@ public class Game extends JFrame implements ActionListener {
         setVisible(true);
         setLocation(380, 50);
         setLayout(new GridLayout(8,8, 0, 0));
-
-
+        WhitePlayer = new Player(1);
+        BlackPlayer = new Player(0);
+        // validate();
     }
-
-
 
     // setting up pieces
     public void Setup ()
     {
         // setting up BLACK PIECES
-        for(int i = 0 ; i < 2 ; i++)  //represent y-axis
+        for(int i = 0 ; i < 2 ; i++)
         {
-            for(int j = 0 ; j < 8 ; j++) //represnt x-axis
+            for(int j = 0 ; j < 8 ; j++)
             {
-                if (i ==0) //if y = 0
+                if (i ==0)
                 {
                     switch (j) {
                         case 0:
@@ -68,20 +67,19 @@ public class Game extends JFrame implements ActionListener {
                             board.getSpot(i, j).insertPiece(bishop);
                             break;
                         case 3:
-                            Piece queen = new Queen(i,j,0);
-                            board.getSpot(i, j).insertPiece(queen);
-                            break;
-                        case 4:
                             Piece king = new King(i,j,0);
                             board.getSpot(i, j).insertPiece(king);
                             break;
-
+                        case 4:
+                            Piece queen = new Queen(i,j,0);
+                            board.getSpot(i, j).insertPiece(queen);
+                            break;
                         default:
                             break;
                     }
 
                 }
-                else if ( i == 1) //if y = 1
+                else if ( i == 1)
                 {
                     Piece pawn = new Pawn(i,j,0);
                     board.getSpot(i, j).insertPiece(pawn);
@@ -113,13 +111,12 @@ public class Game extends JFrame implements ActionListener {
                             board.getSpot(i, j).insertPiece(bishop);
                             break;
                         case 3:
-                            Piece queen = new Queen(i,j,1);
-                            board.getSpot(i, j).insertPiece(queen);
-                            break;
-
-                        case 4:
                             Piece king = new King(i,j,1);
                             board.getSpot(i, j).insertPiece(king);
+                            break;
+                        case 4:
+                            Piece queen = new Queen(i,j,1);
+                            board.getSpot(i, j).insertPiece(queen);
                             break;
                         default:
                             break;
@@ -176,7 +173,6 @@ public class Game extends JFrame implements ActionListener {
         }
     }
 
-
     public boolean IsKingCheck(int color)
     {
         ArrayList<Spot> spot;
@@ -206,8 +202,6 @@ public class Game extends JFrame implements ActionListener {
         }
         return result;
     }
-
-
     public boolean canMove(int color)
     {
         int first_X_pos, first_Y_pos;
@@ -268,21 +262,67 @@ public class Game extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
+
         Object source = ae.getSource();
 
         if (source instanceof Spot)
         {
-            Spot button = (Spot)source; // casting
-            Border border = new LineBorder(Color.black,4);  // LineBorder(Color color, int thickness)
-            //Creates a line border with the specified color and thickness.
+            Spot button = (Spot)source;
+            Border border = new LineBorder(Color.black,4);
 
+
+
+            // this function is related to pawn promotion
             if ((button.getdefaultborder() == button.getBorder()  && button.isEmpty() == false)&&(button.getPiece().getPieceName() == "Pawn") && (button.getPiece().getX()== 0 || button.getPiece().getX()== 7 ) )
             {
                 PawnPromotion window = new PawnPromotion(board,button.getX(), button.getY(),button.getPiece().getColor());
-
-
             }
-            // to check the border of the clicked button if it is normal Spot or a possible move Spot
+
+
+            // caslting possibilities
+            if ( (button.getdefaultborder() != button.getBorder() && button.isEmpty() == true) && (prex == 0 && prey == 3) && (board.getSpot(prex, prey).getPiece().getPieceName() == "King") &&( button.getY()+2 == 3  ) )
+            {
+                board.getSpot(prex, prey).getPiece().move(board.getSpot(prex, prey), button);
+                board.getSpot(0, 0).getPiece().move(board.getSpot(0, 0), board.getSpot(0, 2));
+                preposs.forEach((i) -> {i.setBorder(button.getdefaultborder());});
+                prex =-1;
+                prey =-1;
+                SwitchPlayer(CurrentPlayerColor);
+            }
+            if ( (button.getdefaultborder() != button.getBorder() && button.isEmpty() == true) && (prex == 0 && prey == 3) && (board.getSpot(prex, prey).getPiece().getPieceName() == "King") &&( button.getY()-2 == 3  ) )
+            {
+                board.getSpot(prex, prey).getPiece().move(board.getSpot(prex, prey), button);
+                board.getSpot(0, 7).getPiece().move(board.getSpot(0, 7), board.getSpot(0, 4));
+                preposs.forEach((i) -> {i.setBorder(button.getdefaultborder());});
+                prex =-1;
+                prey =-1;
+                SwitchPlayer(CurrentPlayerColor);
+            }
+            if ( (button.getdefaultborder() != button.getBorder() && button.isEmpty() == true) && (prex == 7 && prey == 3) && (board.getSpot(prex, prey).getPiece().getPieceName() == "King") &&( button.getY()+2 == 3  ) )
+            {
+                board.getSpot(prex, prey).getPiece().move(board.getSpot(prex, prey), button);
+                board.getSpot(7, 0).getPiece().move(board.getSpot(7, 0), board.getSpot(7, 2));
+                preposs.forEach((i) -> {i.setBorder(button.getdefaultborder());});
+                prex =-1;
+                prey =-1;
+                SwitchPlayer(CurrentPlayerColor);
+            }
+            if ( (button.getdefaultborder() != button.getBorder() && button.isEmpty() == true) && (prex == 7 && prey == 3) && (board.getSpot(prex, prey).getPiece().getPieceName() == "King") &&( button.getY()-2 == 3  ) )
+            {
+                board.getSpot(prex, prey).getPiece().move(board.getSpot(prex, prey), button);
+                board.getSpot(7, 7).getPiece().move(board.getSpot(7, 7), board.getSpot(7, 4));
+                preposs.forEach((i) -> {i.setBorder(button.getdefaultborder());});
+                prex =-1;
+                prey =-1;
+                SwitchPlayer(CurrentPlayerColor);
+            }
+
+
+
+
+            // to check for the 3 possibilities of a button
+
+            // if the button is normal spot and and it has a piece
             else if (button.getdefaultborder() == button.getBorder()  && button.isEmpty() == false)
             {
                 // to check if the current player color is the same color of the selected piece
@@ -295,41 +335,32 @@ public class Game extends JFrame implements ActionListener {
                     }
                     // getting possible moves of the spot
                     ArrayList<Spot> pet = button.getPiece().possibleMoves(board);
-                    pet.forEach((Spot i) -> { i.setBorder(border);});
-
+                    pet.forEach((i) -> { i.setBorder(border);});
                     prex = button.getX();
                     prey = button.getY();
                     preposs = pet;
-
-
                 }
             }
+
+            // if the button is normal spot and and is empty
             else if (  button.getdefaultborder() == button.getBorder() && button.isEmpty() == true)
             {
                 if ( prex != -1 && prey !=-1)
                 {
                     preposs.forEach((i) -> {i.setBorder(button.getdefaultborder());});
                 }
+                prex =-1;
+                prey =-1;
             }
+
+            // if the spot is a possible move spot
             else if ( button.getdefaultborder() != button.getBorder() )
             {
-
-
                 board.getSpot(prex, prey).getPiece().move(board.getSpot(prex, prey), button);
                 preposs.forEach((i) -> {i.setBorder(button.getdefaultborder());});
                 prex =-1;
                 prey =-1;
-
                 SwitchPlayer(CurrentPlayerColor);
-                //if(IsKingCheck(CurrentPlayerColor))
-                //{
-                //    System.exit(0);
-                //}
-
-
-
-
-
             }
 
 
