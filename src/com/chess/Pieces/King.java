@@ -55,13 +55,7 @@ public class King extends Piece {
         CCheck[1] = false;
         return KingMoves;
     }
-//    public boolean AvliableSpot(int cy , Board board )
-//    {
-//        if (super.AllPossibleMoves(board).contains(board.getSpot(getX(), cy)))
-//            return false;
-//        else
-//            return true;
-//    }
+
 public boolean AvliableSpot(int cy , Board board )
 {
     for ( int i =0; i < 8; i++)

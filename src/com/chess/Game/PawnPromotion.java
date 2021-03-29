@@ -11,13 +11,13 @@ import javax.swing.*;
 
 
 public class PawnPromotion extends JFrame implements ActionListener {
-    JButton[] button = new JButton[4];
-    Piece[] piece = new Piece[4];
+    private JButton[] button = new JButton[4];
+    private Piece[] piece = new Piece[4];
     
-    JPanel p = new JPanel();
-    JLabel label = new JLabel("Choose a Piece ");
-    Board board2;
-    int selectedX ,selectedY;
+    private JPanel p = new JPanel();
+    private JLabel label = new JLabel("Choose a Piece ");
+    private Board board2;
+    private int selectedX ,selectedY;
     
     public PawnPromotion(Board board ,int X, int Y , int color)
     {
@@ -67,8 +67,7 @@ public class PawnPromotion extends JFrame implements ActionListener {
            p.add(button[i]);
        }  
     }
-    
-    
+
     public void AddPieces (int color)
     {
         String path = "null"; 
@@ -97,7 +96,7 @@ public class PawnPromotion extends JFrame implements ActionListener {
         }
        
     }
-public void close(){
+    public void close(){
  
  WindowEvent winClosingEvent = new WindowEvent(this,WindowEvent.WINDOW_CLOSING);
  Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);

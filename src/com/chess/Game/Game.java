@@ -11,16 +11,15 @@ import javax.swing.border.LineBorder;
 
 
 public class Game extends JFrame implements ActionListener {
-    int prex =-1, prey=-1;
-    ArrayList <Spot> preposs;
+    private int prex =-1, prey=-1;
+    private ArrayList <Spot> preposs;
     
     
-   Board board = new Board();
+   private Board board = new Board();
    Player WhitePlayer = new Player(1);
    Player BlackPlayer = new Player(0);
-   int CurrentPlayerColor =1;
-    
-    
+   int CurrentPlayerColor = 1;
+
     Piece piece;
     int x, y;
    
@@ -134,8 +133,7 @@ public class Game extends JFrame implements ActionListener {
        
         
     }
-   
-    
+
     public void addspots ()
     {
         // adding spots 

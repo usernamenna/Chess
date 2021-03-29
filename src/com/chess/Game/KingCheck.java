@@ -11,9 +11,6 @@ public class KingCheck extends JFrame{
  
     JPanel p = new JPanel();
     JLabel label = new JLabel("King in Check");
- 
- 
- 
     public KingCheck ()
     {
          super();
@@ -33,6 +30,5 @@ public class KingCheck extends JFrame{
         //label.setFont(Font.font(FONT_FAMILY, FontWeight.BOLD, 12));
          p.add(label);
     }
- 
  
 }
