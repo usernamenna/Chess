@@ -70,7 +70,7 @@ public class Rook extends Piece{
             }
         }}
         //const x in up Y
-        for(int i = 0 ; i < 7 ; i++)
+        for(int i = 0 ; i < 8 ; i++)
         {
             int newX = getX();
             int newY = getY()-Y[i];
@@ -124,7 +124,7 @@ public class Rook extends Piece{
             }
         }}
         //const y to left  X
-        for(int i = 0 ; i < 7 ; i++)
+        for(int i = 0 ; i < 8 ; i++)
         {
             int newX = getX()-Y[i];
             int newY = getY();
@@ -149,7 +149,7 @@ public class Rook extends Piece{
                 moves.add(board.getSpot(newX, newY));
             }
         }}
- 
+
         return moves;
     }
  

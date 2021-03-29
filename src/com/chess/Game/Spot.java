@@ -11,12 +11,13 @@ import javax.swing.border.LineBorder;
 
 
 public class Spot extends JButton {
+
     private final int x;
     private final int y;
     private boolean empty = true;
     private Piece piece = null;
     private Border defaultborder;
-    
+
     public Spot ()
     {
         super();
@@ -68,20 +69,19 @@ public class Spot extends JButton {
     // piece insertion in GUI
     public void insertPiece(Piece piece)
     {
-        String path = "null"; 
+        String path = null;
         if (piece.getColor() == 0)
         {
-        path = piece.getBlackPath();
+            path = piece.getBlackPath();
         }
-        else if (piece.getColor() ==1)
+        else if (piece.getColor() == 1)
         {
-        path = piece.getWhitePath();
+            path = piece.getWhitePath();
         }
         ImageIcon icon = new ImageIcon(path);
         Image bf = icon.getImage();
         Image af = bf.getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH);
         icon = new ImageIcon(af);
-        
         this.setIcon(icon);
         empty = false;
         this.piece = piece;
@@ -95,7 +95,6 @@ public class Spot extends JButton {
         this.setIcon(null);
         empty = true;
         piece = null;
-       
     }
     public Piece getPiece()
     {
